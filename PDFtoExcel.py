@@ -1,7 +1,7 @@
 import pdfplumber
 import xlsxwriter
 import multiprocessing
-import time
+from config import get_table_settings
 
 def process_page_range(pdf_path, start_page, end_page):
     """
@@ -13,7 +13,7 @@ def process_page_range(pdf_path, start_page, end_page):
             page = pdf.pages[page_num]
             text = page.extract_text()
             textdata = []
-            tabledata = page.extract_table()
+            tabledata = page.extract_table(get_table_settings())
             if text:
                 lines = text.split("\n")
                 for line in lines:
@@ -51,7 +51,8 @@ def pdf_to_excel(pdf_path, excel_path):
 
         # 保存到 Excel 文件
         save_to_excel(all_data, excel_path)
-        return f"数据已成功提取并保存到 {excel_path}"
+        return (f"数据已成功提取!\n"
+                f"并保存到 {excel_path}")
 
     except Exception as e:
         return f"处理 PDF 文件时发生错误：{e}"

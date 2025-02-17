@@ -8,8 +8,7 @@ default_table_settings = {
     "explicit_horizontal_lines": [],
     "snap_tolerance": 5,
     "join_tolerance": 5,
-    "text_tolerance": 3,
-    "keep_blank_chars": False
+    "text_tolerance": 3
 }
 
 default_file_paths = {
@@ -99,9 +98,6 @@ def set_join_tolerance(tolerance: int):
 
 def set_text_tolerance(tolerance: int):
     set_setting("text_tolerance", tolerance)
-
-def set_keep_blank_chars(keep: bool):
-    set_setting("keep_blank_chars", keep)
 
 # 动态设置文件路径的函数
 def set_pdf_path(pdf_path: str):
