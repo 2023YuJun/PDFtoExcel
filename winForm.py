@@ -242,6 +242,9 @@ class AdvancedSettingsForm:
 
     def get_vertical_lines(self):
         """获取明确的垂直线"""
+        if self.pdf_path == "":
+            messagebox.showerror("错误", "请先选择PDF文件")
+            return
         try:
             vertical_lines, _ = PDFtoExcel.get_lines(self.pdf_path)
             lines_str = "|".join(f"{line['x0']:.2f}" for line in vertical_lines)
@@ -253,6 +256,9 @@ class AdvancedSettingsForm:
 
     def get_horizontal_lines(self):
         """获取明确的水平线"""
+        if self.pdf_path == "":
+            messagebox.showerror("错误", "请先选择PDF文件")
+            return
         try:
             _, horizontal_lines = PDFtoExcel.get_lines(self.pdf_path)
             lines_str = "|".join(f"{line['y0']:.2f}" for line in horizontal_lines)
@@ -359,6 +365,5 @@ class AdvancedSettingsForm:
 if __name__ == "__main__":
     root = tk.Tk()
     app = WinForm(root)
-    root.tk.call('wm', 'iconphoto', root._w, tk.PhotoImage(file='./pdf-to-excel.png'))
 
     root.mainloop()
