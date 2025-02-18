@@ -363,6 +363,8 @@ class AdvancedSettingsForm:
         self.settings_window.destroy()
 
 if __name__ == "__main__":
+    import multiprocessing
+    multiprocessing.freeze_support()  # 用于打包后的多进程支持
     root = tk.Tk()
     app = WinForm(root)
 

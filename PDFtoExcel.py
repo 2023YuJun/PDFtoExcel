@@ -99,6 +99,6 @@ def get_lines(pdf_path):
     return vertical_lines, horizontal_lines
 
 if __name__ == "__main__":
-    pdf_path = "test.pdf"
+    pdf_path = r"test.pdf"
     excel_path = "temp.xlsx"
     pdf_to_excel(pdf_path, excel_path)

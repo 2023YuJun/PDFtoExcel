@@ -16,8 +16,8 @@ default_file_paths = {
     "Excel_path": ""
 }
 
-table_settings_json = "./table_settings.json"
-file_path_json = "./file_default_path.json"
+table_settings_json = "./json_path/table_settings.json"
+file_path_json = "./json_path/file_default_path.json"
 
 def load_settings(file_path: str, default_settings: dict) -> dict:
     """

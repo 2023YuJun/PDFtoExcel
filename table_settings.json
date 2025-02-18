@@ -1,9 +1,0 @@
-{
-    "vertical_strategy": "lines",
-    "horizontal_strategy": "lines",
-    "explicit_vertical_lines": [],
-    "explicit_horizontal_lines": [],
-    "snap_tolerance": 5,
-    "join_tolerance": 5,
-    "text_tolerance": 3
-}
